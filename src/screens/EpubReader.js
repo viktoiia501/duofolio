@@ -57,12 +57,13 @@ function EpubReader(props) {
 	useEffect(() => {
 		showToast('Opening book');
 		let newServer = new StaticServer(0, ExternalStorageDirectoryPath, serverConfig);
-		newServer.start().then((url) =>
+		newServer.start().then((url) => {
+		console.log('_________: ', props.books, url + params.url.replace(ExternalStorageDirectoryPath, ''))
 			setState({
 				bookUrl: url + params.url.replace(ExternalStorageDirectoryPath, ''),
 				server: newServer
 			})
-		);
+		});
 		return () => {
 			props.sortBook(params.index);
 			state.server && state.server.stop();

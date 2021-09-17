@@ -8,7 +8,7 @@ import Icon from './Icon';
 import Spinner from './Spinner';
 import showToast from './Toast';
 import { primaryColor, elevatedBG, languages } from '../constants';
-import { translateApiUrl } from '../constants/private';
+// import { translateApiUrl } from '../constants/private';
 
 const { height, width } = Dimensions.get('window');
 
@@ -17,10 +17,10 @@ function DictionaryModal(props) {
 	const [langIndex, setLangIndex] = useState({ src: 0, trg: 0 });
 
 	useEffect(() => {
-		axios
-			.get(translateApiUrl(props.sLang, props.tLang, props.selected))
-			.then((res) => setTranslation(res.data[0][0][0]))
-			.catch(() => showToast('An error occurred. Please try again later.'));
+		// axios
+		// 	.get(translateApiUrl(props.sLang, props.tLang, props.selected))
+		// 	.then((res) => setTranslation(res.data[0][0][0]))
+		// 	.catch(() => showToast('An error occurred. Please try again later.'));
 		let srcIndex = languages.findIndex((lang) => lang.value === props.sLang);
 		let trgIndex = languages.findIndex((lang) => lang.value === props.tLang);
 		setLangIndex({ src: srcIndex, trg: trgIndex });

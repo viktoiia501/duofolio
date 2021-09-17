@@ -11,6 +11,7 @@ export const addBook = () => async (dispatch) => {
 		onDone: (url) => {
 			let components = url.split('/');
 			let file = components[components.length - 1].split('.');
+			console.log('+++++++++: ', url, file)
 			// if (file[file.length - 1] !== 'epub') {
 			// 	return showToast('Invalid file. Only "epub" files are allowed');
 			// }

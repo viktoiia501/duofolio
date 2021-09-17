@@ -60,6 +60,8 @@ function Home(props) {
 		setInput('');
 	}
 
+	console.log('+++++++++----: ', props.books)
+
 	function listFilter() {
 		if (input) {
 			return props.books.filter((book) => {
